@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+  } 
+  
+  .container {
+    max-width: 500px;
+    margin: 3em auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+  } 
+  
+  form {
+    display: block;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 70%;  
+    border-radius: 5px 0 0 5px; 
+    margin-bottom: 20px;
+  } 
+
+  input[type="number"] {
+    padding: 10px;
+    width: 70%;  
+    border-radius: 5px 0 0 5px; 
+    margin-bottom: 20px;
+  } 
+
+  input[type="radio"] {
+    border-radius: 5px 0 0 5px; 
+    margin-bottom: 20px;
+  } 
+
+  button {
+    padding: 10px 20px;  
+    background-color: #007bff;
+    color: #fff;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #submit-answer
+  {
+    display: block;
+  }
+  #quiz-questions {
+      text-align: center;
+  }
+
+  #timer
+  {
+    padding-bottom: 8px;
+    display: block;
+  }
+
+  .dropbtn {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {  
+    background-color: #2980B9;  
+  }
+
+  #registration-form{
+    display: block;
+  }
+
+  #quiz-container{
+    display: none;
+  }
+
+  
+  #submit-answer:disabled {
+    background-color: #c0c0c0; /* Lighter grey color */
+    cursor: not-allowed; /* Show disabled cursor */
+  }
+  
+  /* CSS styles for highlighting options */
+.selected-correct {
+  color: green;
+}
+
+.selected-incorrect {
+  color: red;
+}
+
+.correct {
+  color: green;
+}

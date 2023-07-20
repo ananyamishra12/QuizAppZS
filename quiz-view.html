@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="quiz-style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Quiz App</h1>
+    <form id="registration-form">
+      <input type="text" id="user-name" placeholder="UserName">
+      <input type="text" id="email" placeholder="Email">
+      <div id="categorys">Select Category</div>
+      <br/>
+      <input type="radio" id="film" name="category" value="11" onchange="setSelectedCategory(this)">
+      <label for="film">Entertainment: Film</label><br>
+      <input type="radio" id="book" name="category" value="10" onchange="setSelectedCategory(this)">
+      <label for="book">Entertainment: Books</label><br>
+      <input type="radio" id="art" name="category" value="25" onchange="setSelectedCategory(this)">
+      <label for="art">Art</label> <br/>
+      <input type="radio" id="geo" name="category" value="22" onchange="setSelectedCategory(this)">
+      <label for="geo">Geography</label>
+      <br/>
+      <p id="selectedCategoryValue"></p>
+      
+        
+      <input type="number" id="number-question" placeholder="Select number of questions">
+      <br/>
+
+      <input type="radio" id="easy" name="level" value="easy" onchange="setSelectedLevel(this)">
+      <label for="easy">Easy</label><br>
+      <input type="radio" id="medium" name="level" value="medium" onchange="setSelectedLevel(this)">
+      <label for="medium">Medium</label><br>
+      <input type="radio" id="hard" name="level" value="hard" onchange="setSelectedLevel(this)">
+      <label for="hard">Hard</label>
+            
+      <br/>
+      <button type="submit">Register</button>
+      
+    </form>
+    <div id="error-block">
+        
+    </div>
+    <div id="quiz-container">
+      <div id="question-container">
+        <span id="timer"></span>
+        <div id="questionID"></div>
+        <input type="radio" id="options_a" name="options" value="a" onchange="setSelectedOption(this)">
+        <label for="options_a">Option A</label><br>
+
+        <input type="radio" id="options_b" name="options" value="b" onchange="setSelectedOption(this)">
+        <label for="options_b">Option B</label><br>
+
+        <input type="radio" id="options_c" name="options" value="c" onchange="setSelectedOption(this)">
+        <label for="options_c">Option C</label><br>
+
+        <input type="radio" id="options_d" name="options" value="correct" onchange="setSelectedOption(this)">
+        <label for="options_d">Correct Option</label>
+        <button id="submit-answer" onclick="nextQues()">Submit Answer</button>
+      </div>
+    </div>
+    <h4 id="final-score" style="display: none;">Your final score:</h4>
+    
+</div>
+</body>
+</html>
+
+<script src="quiz.js">
+  
+</script>

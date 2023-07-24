@@ -1,17 +1,3 @@
-function setSelectedCategory(radioButton) 
-{
-    selectedCategory = radioButton;
-    console.log("categoryValue:",selectedCategory.value);
-  }
-
-function setSelectedLevel(radioButton) 
-{
-    selectedDifficulty = radioButton;
-    console.log("difficulty:",selectedDifficulty.value);
-}
-
-
-
 // Global Variables
 var questions = []; 
 var currentQuestionIndex = 0; 
@@ -19,7 +5,17 @@ var score = 0;
 var timerInterval; 
 
 
+function setSelectedCategory(radioBTN) 
+{
+    selectedCategory = radioBTN;
+    console.log("categoryValue:",selectedCategory.value);
+  }
 
+function setSelectedLevel(radioBTN) 
+{
+    selectedDifficulty = radioBTN;
+    console.log("difficulty:",selectedDifficulty.value);
+}
 // Start the quiz
 function startQuiz() 
 {
@@ -66,12 +62,12 @@ function loadQuestion()
 
 
 
-function validateConfig(numberOfQuestions, level, questionCategory, email, userName) {
+function validateConfig(numofques, level, questionCategory, email, userName) {
     var errorBlock = document.getElementById("error-block");
     errorBlock.textContent = ""; 
     console.log("error message is", errorBlock);
-    console.log("number",numberOfQuestions);
-    if (numberOfQuestions==null || !numberOfQuestions || numberOfQuestions.value <= 0 || numberOfQuestions.value<5) 
+    console.log("number",numofques);
+    if (numofques==null || !numofques || numofques.value <= 0 || numofques.value<5) 
     {
       errorBlock.textContent = "Invalid number of questions.";
       return false; 
@@ -124,7 +120,7 @@ function startTimer() {
   }, 1000);
 }
 
-var selectedAnswer = null;
+var selectedANS = null;
 function handleAnswerSubmission(selectedOption) 
 {
   clearInterval(timerInterval); 
@@ -215,7 +211,7 @@ function validate(response)
 function shuffle(array) 
 {
   var currentIndex = array.length;
-  console.log("lngth currentIndex", currentIndex);
+  console.log("length currentIndex", currentIndex);
   var temporaryValue;
   var randomIndex;
 
@@ -239,16 +235,16 @@ document.getElementById("registration-form")?.addEventListener("submit", functio
   var email = document.getElementById("email").value;
   var userName = document.getElementById("user-name").value;
   console.log("username is this",userName);
-  var numberOfQuestions = document.getElementById("number-question");
+  var numofques = document.getElementById("number-question");
   var level = document.querySelector('input[name="level"]:checked');
   var questionCategory = document.querySelector('input[name="category"]:checked');
-  console.log(numberOfQuestions, level, questionCategory, "detailsss");
-  if(validateConfig(numberOfQuestions,level,questionCategory,email,userName))
+  console.log(numofques, level, questionCategory, "detailsss");
+  if(validateConfig(numofques,level,questionCategory,email,userName))
   {
-    numberOfQuestions = numberOfQuestions.value;
+    numofques = numofques.value;
     level = level.value;
     questionCategory = questionCategory.value;
-    var apiUrl = "https://opentdb.com/api.php?amount=" + numberOfQuestions + "&category=" + questionCategory + "&difficulty=" + level + "&type=multiple";
+    var apiUrl = "https://opentdb.com/api.php?amount=" + numofques + "&category=" + questionCategory + "&difficulty=" + level + "&type=multiple";
 
     fetch(apiUrl)
         .then(function(response) {
@@ -268,15 +264,15 @@ document.getElementById("registration-form")?.addEventListener("submit", functio
     }
 });
 
-function setSelectedOption(radioButton)
+function setSelectedOption(radioBTN)
 {
-    selectedAnswer = radioButton.value;
-    console.log(radioButton.value); 
+    selectedANS = radioBTN.value;
+    console.log(radioBTN.value); 
   }
   
   // Function to move to the next question
   function nextQues() 
   {
-    handleAnswerSubmission(selectedAnswer);
+    handleAnswerSubmission(selectedANS);
     console.log("Moving to the next question"); 
   }
